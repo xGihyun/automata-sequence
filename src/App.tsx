@@ -151,6 +151,12 @@ export default function App() {
                     II. A rule called the recursion is given, which explains how
                     aₙ is computed from previous terms.
                   </p>
+
+                  <br />
+                  <p>
+                    The terms of a recursive sequence can be numbers, graph, or
+                    other objects.
+                  </p>
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -270,4 +276,3 @@ export default function App() {
     </>
   )
 }
-
