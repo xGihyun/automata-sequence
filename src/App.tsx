@@ -81,11 +81,20 @@ export default function App() {
   const handleCompute = () => {
     setError("")
     setResults(null)
-    const n = parseInt(inputN)
+    const trimmed = inputN.trim()
+    const n = Number(trimmed)
     const active = sequences.find((s) => s.id === currentView)!
 
-    if (isNaN(n) || inputN.trim() === "") {
+    if (trimmed === "" || isNaN(n)) {
       setError("Please enter a valid number.")
+      return
+    }
+    if (!Number.isInteger(n)) {
+      setError("Please enter a whole number.")
+      return
+    }
+    if (n <= 0) {
+      setError(active.minError)
       return
     }
     if (n < active.minTerms) {
@@ -203,9 +212,8 @@ export default function App() {
               {/* Input row */}
               <div className="flex w-full max-w-sm items-center gap-2">
                 <input
-                  type="number"
-                  min={activeSequence?.minTerms}
-                  max={100}
+                  type="text"
+                  inputMode="numeric"
                   value={inputN}
                   onChange={(e) => {
                     setInputN(e.target.value)
