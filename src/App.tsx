@@ -101,10 +101,10 @@ export default function App() {
       setError(active.minError)
       return
     }
-    if (n > 100) {
-      setError("Please enter a number of terms ≤ 100.")
-      return
-    }
+    // if (n > 100) {
+    //   setError("Please enter a number of terms ≤ 100.")
+    //   return
+    // }
     setResults(compute(currentView, n))
   }
 
@@ -217,7 +217,7 @@ export default function App() {
                   value={inputN}
                   onChange={(e) => {
                     setInputN(e.target.value)
-                    setResults(null)
+                    // setResults(null)
                     setError("")
                   }}
                   onKeyDown={(e) => e.key === "Enter" && handleCompute()}
