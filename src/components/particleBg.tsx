@@ -45,7 +45,7 @@ export default function ParticlesBg() {
                 value: 80,
                 density: {
                     enable: true,
-                },
+                },a
             },
             opacity: {
                 value: 0.5,
